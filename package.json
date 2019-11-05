@@ -1,7 +1,7 @@
 {
   "name": "jpush",
-  "version": "1.1.0",
-  "description": "",
+  "version": "1.2.0",
+  "description": "极光推送表格导出",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

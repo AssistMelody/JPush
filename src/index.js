@@ -118,14 +118,41 @@ module.exports = class JPush {
         console.log('完毕!!'.green);
         this.workbook.commit();
     }
-    fromDate(time){
+    fromDate(time) {
         var DateTime = new Date(time);
         var year = DateTime.getFullYear()
-        var month = DateTime.getMonth()+1;
+        var month = DateTime.getMonth() + 1;
         var day = DateTime.getDate();
         var h = DateTime.getHours();
         var m = DateTime.getMinutes();
         var s = DateTime.getSeconds();
         return `${year}-${month}-${day} ${h}：${m}:${s}`;
+    }
+    /**
+     * @description: 自定义导出
+     * @param {string} name 文件名
+     * @param {array} columns 表头 [{ header: '发送时间', key: 'scheduledTime' }]
+     * @param {array|object} data 数据
+     */
+    static DataTranExcel(name, columns, data) {
+        fs.mkdir('./xlsx', () => {
+            try {
+                let workbook = new Excel.stream.xlsx.WorkbookWriter({
+                    filename: './xlsx/' + name + '.xlsx'
+                });
+                worksheet = workbook.addWorksheet('Sheet');
+                worksheet.columns = columns;
+                console.log(`开始添加数据，长度为${data.length}`.green);
+                for (const key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        worksheet.addRow(data[key]).commit();
+                    }
+                }
+                console.log('完毕!!'.green);
+                workbook.commit();
+            } catch (error) {
+                console.log(`${error.message}`.red);
+            }
+        })
     }
 }
