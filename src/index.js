@@ -140,7 +140,7 @@ module.exports = class JPush {
                 let workbook = new Excel.stream.xlsx.WorkbookWriter({
                     filename: './xlsx/' + name + '.xlsx'
                 });
-                worksheet = workbook.addWorksheet('Sheet');
+                let worksheet = workbook.addWorksheet('Sheet');
                 worksheet.columns = columns;
                 console.log(`开始添加数据，长度为${data.length}`.green);
                 for (const key in data) {
