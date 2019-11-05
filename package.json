@@ -6,8 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AssistMelody/JPush.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "shenyuan",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AssistMelody/JPush/issues"
+  },
+  "homepage": "https://github.com/AssistMelody/JPush#readme",
   "dependencies": {
     "axios": "^0.19.0",
     "colors": "^1.4.0",
