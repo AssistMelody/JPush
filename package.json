@@ -4,6 +4,7 @@
   "description": "极光推送表格导出",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,10 +22,18 @@
   "homepage": "https://github.com/AssistMelody/JPush#readme",
   "dependencies": {
     "axios": "^0.19.0",
-    "colors": "^1.4.0",
     "exceljs": "^3.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/runtime": "^7.7.2",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "colors": "^1.4.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   }
